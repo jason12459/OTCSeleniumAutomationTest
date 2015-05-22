@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="test.HomePage">
+        <methods>
+          <include name="test_quote_page_items_exist"/>
+          <include name="test_quote_page"/>
+          <include name="setup"/>
+          <include name="test_quote_page_data_validation"/>
+        </methods>
+      </class> <!-- test.HomePage -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

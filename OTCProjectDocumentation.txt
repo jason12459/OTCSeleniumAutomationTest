@@ -1,0 +1,14 @@
+This Selenium automation test is to be run against "http://www.otcmarkets.com/stock/OTCM/quote".  This is split into 3 tests.
+Test 1: Verifies that all objects (web elements) exist.
+Test 2: Outputs all data to the console
+Test 3: Validates the data from each web element 
+
+This is setup to run in firefox or chrome.  To switch the test to use a chrome browser perform the following instructions:
+1) Comment out:
+        driver = new FirefoxDriver();
+2) Uncomment:
+	//	System.setProperty("webdriver.chrome.driver", "src//main//resources//chromedriver.exe"); 
+	//	driver = new ChromeDriver();
+3) Verify the chrome driver is in: src/main/resource/chromedriver.exe
+4) Navigate to src/test/java/test/
+5) Right click on HomePage.java and Run as TestNG Test
