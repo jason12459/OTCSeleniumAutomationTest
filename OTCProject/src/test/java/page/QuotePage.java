@@ -11,8 +11,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class QuotePage {
-	//WebDriver driver;
 
+	
+	public QuotePage(WebDriver driver){
+		PageFactory.initElements(driver, this);
+	}
+	
+	
 	
 	/** left most column */
 	@FindBy(className="lastPriceChg")
@@ -81,11 +86,12 @@ public class QuotePage {
 	@FindBy(css="#tradeTime")
 	WebElement tradeDate;
 	
-	public QuotePage(WebDriver driver){
-//		this.driver = driver;
-		
-		PageFactory.initElements(driver, this);
-	}
+	
+	//qx image button
+	@FindBy(id="tierID-1")
+	public WebElement imgQX;
+
+
 	
 	
 	
@@ -169,4 +175,5 @@ public class QuotePage {
 	public String getTradeDate(){
 		return tradeDate.getText();
 	}
+	
 }

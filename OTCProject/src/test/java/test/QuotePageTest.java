@@ -12,52 +12,20 @@ package test;
 
 import static org.testng.AssertJUnit.assertFalse;
 
-import java.util.concurrent.TimeUnit;
-
-
-
-
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
-import java.io.IOException;
 
+import page.MarketplacesPage;
 import page.QuotePage;
+import framework.WebTest;
 
 
-public class HomePage {
-	WebDriver driver;
+public class QuotePageTest extends WebTest{
+	
 	QuotePage objQuotePage;
-
 	
-
+	String newURL = "";
 	
-	@BeforeSuite
-	public void setup(){
-        driver = new FirefoxDriver();
-		System.out.println("starting before suite");
-	//	System.setProperty("webdriver.chrome.driver", "src//main//resources//chromedriver.exe"); 
-	//	driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("http://www.otcmarkets.com/stock/OTCM/quote");
-        driver.manage().window().maximize();
-        
-        System.out.println("Finished with before suite");
-        System.out.println();
-	}
-	
-
-	@AfterSuite
-	public void shutdown() {
-		driver.close();
-		System.out.println("Webdriver is closing");
-		//driver.quit();
-	}
 
 	@Test(priority=1)
 	//do all items exist
@@ -287,6 +255,31 @@ public class HomePage {
 		System.out.println("Test 3 is now ending");
 		System.out.println();
 	}
+
+	
+	//Move on to next area
+	@Test(priority=4)
+	public void testNextArea(){
+		System.out.println("Test 4 is now starting");
+
+
+		objQuotePage.imgQX.click();
+		newURL = driver.getCurrentUrl().intern();
+		assert(newURL=="http://www.otcmarkets.com/marketplaces/otcqx");
+		System.out.println("Total Securities:");
+		MarketplacesPage objMarketPlacesPage = PageFactory.initElements(driver,MarketplacesPage.class);
+		System.out.println(objMarketPlacesPage.getHeaderTotalSecuritities());
+		
+			
+		
+		System.out.println("Test 4 is now ending");
+		System.out.println();
+		
+		
+		
+	}
+		
+	
 
 	
 	

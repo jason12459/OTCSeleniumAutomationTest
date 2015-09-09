@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="test.HomePage">
+      <class name="test.QuotePageTest">
         <methods>
-          <include name="test_quote_page_items_exist"/>
-          <include name="test_quote_page"/>
           <include name="setup"/>
-          <include name="test_quote_page_data_validation"/>
+          <include name="testNextArea"/>
+          <include name="shutdown"/>
         </methods>
-      </class> <!-- test.HomePage -->
+      </class> <!-- test.QuotePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
